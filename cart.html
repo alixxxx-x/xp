@@ -5,23 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="styles/skeleton.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             font-family: 'HelveticaNeue-Light', sans-serif;
             color: #333;
            
         }
+        .main-section{
+            
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 70px 0px;
+            padding: 0px 40px;
+        }
+        
         .shopping-cart {
             padding: 30px;
-            background-color: #f7f7f7;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(135deg, #ed400b, #fe4a2f, #f7ae12);
+            border-radius: 10px;
+        }
+        .shopping-cart1{
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-start;
+            margin: 10px;
+
+        }
+        .shopping-cart1 i{
+            margin: 10px;
+            font-size: 40px;
+            
         }
         .shopping-cart h1 {
             font-weight: 100;
             color: #FFD333;
-            margin-bottom: 20px;
+            margin: 20px;
+            font-family: "Press Start 2P", cursive;
         }
         .cart-items {
-            background-color: #fff;
+            background-color: rgb(30, 30, 30);
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -30,44 +59,51 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            background-color: #000;
+            border: 1px solid #ddd;
+            border-radius: 6px;
             transition: transform 0.3s;
         }
         .product-image img {
             width: 100px;
             height: 100px;
             object-fit: cover;
+            border-radius: 5px;
         }
         .product-details {
             flex: 1;
             font-family: 'HelveticaNeue-Medium';
             margin-left: 20px;
+            
         }
         .product-description {
             margin: 5px 0;
             line-height: 1.4em;
-            color: #000;
+            color: #acaaaa;
             font-size: 16px;
             font-weight: bold;
+            font-size: 20px;
         }
         .product-line-price {
             flex: 0 0 80px;
             text-align: right;
-            color: #000;
+            color: #acaaaa;
             font-size: 16px;
             font-weight: bold;
+            padding-right: 10px;
         }
         .product-removal button {
-            border: 0;
-            padding: 12px;
-            background-color: #e74c3c;
-            color: #fff;
-            font-family: 'HelveticaNeue-Medium';
-            font-size: 14px;
-            border-radius: 3px;
+            background: #ff7b00;
+            color: black;
+            border: none;
+            padding: 15px 12px;
+            font-size: 12px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-family: 'Press Start 2P', cursive;
+            box-shadow: 2px 2px 0px #ffcc00;
+            border-radius: 5px;
+            transition: 0.2s;
         }
         .totals {
             margin-top: 30px;
@@ -84,16 +120,20 @@
             font-weight: bold;
         }
         .checkout {
+            background: #ff7b00;
+            color: black;
+            border: none;
+            font-size: 12px;
+            font-family: 'Press Start 2P', cursive;
+            box-shadow: 2px 2px 0px #ffcc00;
+            border-radius: 5px;
+            transition: 0.2s;
             display: block;
             margin: 30px auto 0;
             padding: 12px 24px;
-            background-color: #FFD333;
             color: #333;
             font-size: 18px;
-            border-radius: 3px;
-            border: 0;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
     </style>
 </head>
@@ -135,13 +175,17 @@
                 
 
             </div>
-    </nav>
+    </nav>  
+    <section class="main-section">
     <div class="shopping-cart">
-        <h1>Shopping Cart</h1>
+        <div class="shopping-cart1">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h1 >Shopping Cart</h1> 
+        </div>
         <div class="cart-items">
             <div class="product">
                 <div class="product-image">
-                    <img src="assets/background-login-removebg.png" alt="Product Name">
+                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
                 </div>
                 <div class="product-details">
                     <p class="product-description">product name</p>
@@ -153,7 +197,19 @@
             </div>
             <div class="product">
                 <div class="product-image">
-                    <img src="assets/background-login-removebg.png" alt="Product Name">
+                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
+                </div>
+                <div class="product-details">
+                    <p class="product-description">product name</p>
+                </div>
+                <div class="product-line-price">$99.99</div>
+                <div class="product-removal">
+                    <button>Remove</button>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-image">
+                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
                 </div>
                 <div class="product-details">
                     <p class="product-description">product name</p>
@@ -171,6 +227,7 @@
         </div>
         <button class="checkout">Proceed to Checkout</button>
     </div>
+</section>
     <footer>
        
         <div class="waves">
