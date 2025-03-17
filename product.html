@@ -29,7 +29,7 @@
         width: 200px;
     }
 .pdffile{
-    margin-top: 70px;
+    margin-top: 90px;
     margin-bottom: 70px;
 	width : 90vw;
     height: 70vh;
@@ -59,7 +59,6 @@
 .product-page{
     border-radius: 10px;
     background-color:transparent;
-    padding-left: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -74,6 +73,7 @@
 #content ul{
     margin-top: 20px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 #sizes{
     display: flex;
@@ -190,9 +190,10 @@
                     </div>
                 </div>
                  <div id="content">
-                    <h2>product name</h2>
+                    <h3>product name</h3><br>
+                    <h2><b>sizes</b></h2>
                     <ul id="sizes">
-                        <li><button class="size-btn" onclick="selectSize(this)">M</button></li>
+                        <li><button class="size-btn"onclick="selectSize(this)">M</button></li>
                         <li><button class="size-btn"onclick="selectSize(this)">S</button></li>
                         <li><button class="size-btn"onclick="selectSize(this)">L</button></li>
                         <li><button class="size-btn"onclick="selectSize(this)">XL</button></li>
@@ -250,7 +251,7 @@
 
     // Add 'selected' class to the clicked button
     selectedBtn.classList.add("selected");
-}
+    }
 
         function showSidebar(){
             const sidebar= document.querySelector('.sidebar')
