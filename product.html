@@ -40,7 +40,7 @@
 }
 #cart-btn{
     background-color: orangered;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 2px black;
     cursor: pointer;
     height: 20px;
@@ -70,6 +70,10 @@
     padding: 30px;
     line-height: 40px;
 }
+#content ul{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 #sizes{
     display: flex;
     flex-direction: row;
@@ -94,33 +98,41 @@
 #sizes li {
     padding-left:10px;
 }
-/*.size-btn{
-    border-radius: 5px;
-    color:black;
-    background-color: transparent;
-    border: 2px black solid;
-    cursor: pointer;
-    padding-left: 5px;
-    padding-right: 5px;
 
-}*/
 .size-btn {
-    border: 2px solid gray; /* Default border */
-    padding: 10px 20px;
-    background-color: transparent;
+    background: #ff7b00;
     color: black;
+    border: none;
+    padding: 8px 12px;
+    font-size: 12px;
     cursor: pointer;
-    transition: border 0.3s ease;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: 2px 2px 0px #ffcc00;
+    border-radius: 5px;
+    transition: 0.2s;
 }
-
+.size-btn{
+    background: #ffcc00;
+    box-shadow: 2px 2px 0px #ff7b00;
+}
 .size-btn.selected {
-    border: 2px solid white; /* White border for selected button */
+    border: 2px solid white; 
 }
 
 #cart-t{
     display: flex;
     flex-direction: column;
     
+}
+#btn-cartt{
+    padding-left: 50px;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+@media(max-width:600px){
+    .product-page{
+        flex-direction: column;
+    }
 }
     </style>
 </head>
@@ -170,7 +182,7 @@
         <div class="hole-page">
             <div class="product-page" style="background-color: transparent;">
                 <div id="p1">
-                    <img src="assets/background-login-removebg.png" alt="product-1" id="product-1" >
+                    <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="product-1" id="product-1" >
                     <div class="xp">
                     <img style="width: 40px;" src="assets/sefesf (1).webp" alt=""> 
                     <p>Aquirable xp</p>
@@ -192,11 +204,8 @@
                  </div> 
             </div>
             
-            <div style="padding-left: 50px;background-color: transparent;">
+            <div id="btn-cartt">
                 <button id="cart-btn">ADD to cart</button>
-                <h3 style="margin: 20px;">reviews</h3>
-                <input style="width: 50%;" type="text" name="Enter your review here..." id="review-inp">
-            </div>
         </div>
     </section>  
     <footer>
