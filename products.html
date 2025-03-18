@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <style>
+
         .main-section{
             padding:30px;
 
@@ -23,14 +24,14 @@
             overflow:hidden;
         }
         
-                /* Fullscreen Video Background */
+            
         .video-container {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* Behind everything */
+            z-index: -1; 
         
         }
 
@@ -40,7 +41,7 @@
             object-fit: cover;
         }
 
-       /* 🏗️ Content Overlay Layout */
+       
 .content-overlay {
     display: flex;
     flex-direction: column;
@@ -53,7 +54,7 @@
     gap: 50px;
     padding:40px;
 }
-/* 🎛️ Filter Container */
+
 .filter {
     background: rgba(0, 0, 0, 0.8);
     padding: 15px;
@@ -114,7 +115,7 @@
     box-shadow: 2px 2px 0px #ff7b00;
 }
 
-/* 🛍️ Products Grid Layout */
+
 .products-grid {
     flex: 1;
     display: grid;
@@ -127,7 +128,7 @@
     box-shadow: 0px 4px 10px rgba(255, 123, 0, 0.5);
 }
 
-/* 🎴 Product Cards */
+
 .product-card {
     background: rgba(20, 20, 20, 0.95);
     border-radius: 12px;
@@ -167,7 +168,7 @@
     color: #ff7b00;
 }
 
-/* 🛒 Buy Button */
+
 .buy-1 {
     background: #ff7b00;
     color: black;
@@ -188,79 +189,76 @@
 
 
         
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      
 
+    h2 {
+        text-align: center;
+        font-size: 18px;
+        color: #ffcc00;
+        text-shadow: 2px 2px 0px #ff7b00;
+    }
 
-            h2 {
-                text-align: center;
-                font-size: 18px;
-                color: #ffcc00;
-                text-shadow: 2px 2px 0px #ff7b00;
-            }
+    .filter-section h3 {
+        font-size: 14px;
+        color: #ff7b00;
+        margin-bottom: 5px;
+    }
 
-            .filter-section h3 {
-                font-size: 14px;
-                color: #ff7b00;
-                margin-bottom: 5px;
-            }
+    .filter-section label {
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        color: white;
+    }
 
-            .filter-section label {
-                display: flex;
-                align-items: center;
-                font-size: 12px;
-                margin-bottom: 5px;
-                cursor: pointer;
-                color: white;
-            }
+    .filter-section input[type="checkbox"] {
+        margin-right: 8px;
+        accent-color: #ffcc00;
+        transform: scale(1.3);
+    }
 
-            .filter-section input[type="checkbox"] {
-                margin-right: 8px;
-                accent-color: #ffcc00;
-                transform: scale(1.3);
-            }
+    .filter-section input[type="number"] {
+        width: 100px;
+        padding: 5px;
+        border: 2px solid #ff7b00;
+        background: black;
+        color: white;
+        font-size: 12px;
+        font-family: 'Press Start 2P', cursive;
+    }
 
-            .filter-section input[type="number"] {
-                width: 100px;
-                padding: 5px;
-                border: 2px solid #ff7b00;
-                background: black;
-                color: white;
-                font-size: 12px;
-                font-family: 'Press Start 2P', cursive;
-            }
+    .reset-button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background: #ff7b00;
+        color: black;
+        border: none;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 12px;
+        cursor: pointer;
+        box-shadow: 2px 2px 0px #ffcc00;
+    }
 
-            .reset-button {
-                width: 100%;
-                padding: 10px;
-                margin-top: 10px;
-                background: #ff7b00;
-                color: black;
-                border: none;
-                font-family: 'Press Start 2P', cursive;
-                font-size: 12px;
-                cursor: pointer;
-                box-shadow: 2px 2px 0px #ffcc00;
-            }
+    .reset-button:hover {
+        background: #ffcc00;
+        box-shadow: 2px 2px 0px #ff7b00;
+    }
 
-            .reset-button:hover {
-                background: #ffcc00;
-                box-shadow: 2px 2px 0px #ff7b00;
-            }
+    
+    i {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    display: inline-block; 
+    position: relative;
+    top:-3px;
+    transform: scale(1.1);
+}
 
-            /* FontAwesome Icons */
-            h3::before {
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                margin-right: 10px;
-            }
-
-            .filter-section h3:nth-child(1)::before { content: "\f553"; } /* T-shirt */
-            .filter-section h3:nth-child(2)::before { content: "\f11b"; } /* Gamepad */
-            .filter-section h3:nth-child(3)::before { content: "\f2cd"; } /* Ruler (Size) */
-            .filter-section h3:nth-child(4)::before { content: "\f155"; } /* Dollar sign */
-
-
-        
+     
 
     </style>
 </head>
@@ -336,7 +334,7 @@
                             <h2>filter</h2>
 
                             <div class="filter-section">
-                                <h3>Apparel</h3>
+                                <h3><i class="fas fa-tshirt"></i>Apparel</h3>
 
                                 <label><input type="checkbox">T-Shirts</label>
                                 <label><input type="checkbox">Long-Sleeved Shirts</label>
@@ -364,7 +362,7 @@
                         </div>
 
                         <div class="filter-section">
-                            <h3>Size</h3>
+                            <h3><i class="fas fa-ruler"></i>Size</h3>
                             <label><input type="checkbox"> S</label>
                             <label><input type="checkbox"> M</label>
                             <label><input type="checkbox"> L</label>
@@ -372,7 +370,7 @@
                         </div>
 
                         <div class="filter-section">
-                            <h3>Price</h3>
+                            <h3><i class="fas fa-dollar-sign"></i>Price</h3>
                             <input type="number" placeholder="Min $">
                             <input type="number" placeholder="Max $">
                         </div>
