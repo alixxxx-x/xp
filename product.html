@@ -317,7 +317,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
    <script>    
     document.addEventListener("DOMContentLoaded", () => {
-        const addToCartButton = document.querySelector(".add-to-cart");
+        const addToCartButton = document.querySelector(".cart-btn");
 
         addToCartButton.addEventListener("click", () => {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
