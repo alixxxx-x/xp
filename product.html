@@ -86,7 +86,7 @@
     display:flex;
     flex-direction: column;
     padding: 30px;
-    
+    line-height: 40px;
 }
 #content ul{
     margin-top: 20px;
@@ -282,41 +282,41 @@
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>    
-        document.addEventListener("DOMContentLoaded", () => {
-            const addToCartButton = document.querySelector(".add-to-cart");
-    
-            addToCartButton.addEventListener("click", () => {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-                const selectedSize = document.querySelector(".size-btn.selected");
-                if (!selectedSize) {
-                    alert("Please select a size!");
-                    return;
-                }
-    
-                const product = {
-                    id: "annoyingdog_lapel",
-                    name: "Annoying Dog Lapel Pin",
-                    price: 20,
-                    size: selectedSize.innerText,
-                    quantity: 1
-                };
-    
-                // Check if the item is already in the cart with the same size
-                const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push(product);
-                }
-    
-                localStorage.setItem("cart", JSON.stringify(cart));
-                alert("Added to cart!");
-            });
+   <script>    
+    document.addEventListener("DOMContentLoaded", () => {
+        const addToCartButton = document.querySelector(".add-to-cart");
+
+        addToCartButton.addEventListener("click", () => {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const selectedSize = document.querySelector(".size-btn.selected");
+            if (!selectedSize) {
+                alert("Please select a size!");
+                return;
+            }
+
+            const product = {
+                id: "annoyingdog_lapel",
+                name: "Annoying Dog Lapel Pin",
+                price: 20,
+                size: selectedSize.innerText,
+                quantity: 1
+            };
+
+            // Check if the item is already in the cart with the same size
+            const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push(product);
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert("Added to cart!");
         });
-    </script>
-    
+    });
+</script>
+
     
 </body>
 </html>
