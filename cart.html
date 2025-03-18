@@ -294,6 +294,7 @@
                 cartContainer.innerHTML += `
                     <div class="product">
                         <div class="product-details">
+                            <img src= "${item.image}" alt=${item.name}>
                             <h4>${item.name}</h4>
                             <p>Size: ${item.size}</p>
                             <p>Quantity: <button onclick="changeQuantity(${index}, -1)">-</button> ${item.quantity} <button onclick="changeQuantity(${index}, 1)">+</button></p>
