@@ -7,6 +7,11 @@
     <link rel="icon" href="assets/favicon.png">
     <link rel="stylesheet" href="styles/skeleton.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Bungee&family=Montserrat&family=Roboto+Mono&family=VT323&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    
+
     <style> 
     
     .mainsection{
@@ -39,7 +44,9 @@
     #game-name img{
         width: 200px;
     }
-.pdffile{
+
+   
+.file{
     margin-top: 90px;
     margin-bottom: 70px;
 	width : 90vw;
@@ -47,28 +54,35 @@
 	justify-self: center;
 	position:realtive;
 	top: 30px;
-    
-	
+    }
+
+#btn-cartt{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
 }
-#cart-btn{
-    background-color: rgb(255, 34, 0);
-    border-radius: 5px;
-    font-weight: bolder;
-    font-size: 15px;
-    font-weight: bolder;
-    font-size: 15px;
-    border: 2px black;
+
+.cart-btn{
+    width: 50%;
+    height:45px ;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #c20c06;
+    color: black;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
     cursor: pointer;
-    height: 20px;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-style: solid;
-    margin-left: 40%;
-    box-shadow: 5px;
+    box-shadow: 2px 2px 0px #ffcc00;
+
 }
-#cart-btn:hover{
-    border-color: #ffffff;
-    transition: all 0.5s linear;
+
+
+.cart-btn:hover{
+    background: #f43333;
+    transform: translateY(3px);
+    box-shadow: 0px 2px 0px #d84315;
+
 }
 
 .product-page{
@@ -76,6 +90,7 @@
     background-color:transparent;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
     border-radius: 10px;
     padding-left: 20px;
@@ -111,7 +126,13 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
+    height: 60px;
+}
+.xp img {
+    height: 80px;
+    width: 80px !important;
 }
 #sizes li {
     padding-left:10px;
@@ -136,21 +157,21 @@
 .size-btn.selected {
     border: 2px solid white; 
 }
-
-
-#btn-cartt{
+.info {
     display: flex;
-    align-content: center;
-    justify-content:center ;
     align-items: center;
-    justify-content:center ;
+    gap: 10px; 
 }
-#btn-cartt{
-    
-    padding-left: 50px;
-    height: 30px;
-    background-color: transparent;
-    margin-bottom: 10px;
+.price{
+    display: flex;
+    margin: 5px 0px;
+    gap: 5px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.label-font{
+    font-family: 'Press Start 2P'!important;
 }
 @media(max-width:600px){
 
@@ -201,7 +222,7 @@
     </nav> 
 
     <section class="main-section">
-        <section class="pdffile">
+        <section class="file">
             <div id="game-name">
                 <img src="https://www.fangamer.com/cdn/shop/files/logo-stardew-valley.svg?v=1692129769">
             </div>
@@ -211,29 +232,32 @@
                         <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="product-1" id="product-1" >
                         <div class="xp">
                         <img style="width: 40px;" src="assets/sefesf (1).webp" alt=""> 
-                        <p>Aquirable xp</p>
+                        <span style="font-size: 15px;font-weight: bolder; font-family: 'Press Start 2P', cursive;"> Aquirable+xp</span>
                         </div>
                     </div>
                     <div id="content">
-                        <h3>product name</h3><br>
-                        <p><b>Price</b> : <span class="product-price">$36</span></p>
-                        <h2><b>sizes</b></h2>
-                        <ul id="sizes">
+                         <h3 style="font-size: 33px; color:rgb(0, 0, 0); margin: 20px 0px;" class="label-font">Product name</h3>
+
+                        <div class="price">
+                            <label style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX;width: fit-content;" class="label-font">Price:</label> <span style="font-size: 22px;color: rgb(21, 21, 21);background: #dfbe76;padding: 5PX;border-radius: 5PX;"class="label-font">$36</span>
+                        </div>
+                        <h3 style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX;width:fit-content;" class="label-font">Sizes:</h3>
+                        <ul id="sizes" style="background: #dfbe76;padding:20px;margin:5px 0px;border-radius: 5px;">
                             <li><button class="size-btn"onclick="selectSize(this)">M</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">S</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">L</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">XL</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">XXL</button></li>
-                            <li><button class="size-btn"onclick="selectSize(this)">YOU ARE FATTT</button></li>
+                            <li><button class="size-btn"onclick="selectSize(this)">XXXL</button></li>
                         </ul>
-                        <h3>description</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, in.</p>
+                        <h3 style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX" class="label-font">Description:</h3>
+                        <p style="font-size: 15px;background:  #dfbe76;padding: 30PX;border-radius: 5PX;margin:5px 0px"class="label-font"><i class="fa fa-star" style="color: rgb(255, 252, 71);transform: scale(1.5) ; position: relative;top: -4px;"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, in.</p>
                         
                     </div> 
                 </div>
                 
                 <div id="btn-cartt">
-                    <button class="add-to-cart" data-name="annoyingdog_lapel" data-price="20">ADD to cart</button>
+                    <button class="cart-btn" data-name="annoyingdog_lapel" data-price="20">ADD to cart</button>
             </div>
         </section> 
     </section>
