@@ -68,7 +68,7 @@
 }
 
 .filter-section {
-    margin-bottom: 15px;
+    margin: 20px;
 }
 
 .filter h2,
@@ -561,6 +561,61 @@
             const sidebar = document.querySelector('.sidebar')
             sidebar.style.display='none'
         }
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.querySelector(".searcher-container input");
+    const filterCheckboxes = document.querySelectorAll(".filter-section input[type='checkbox']");
+    const minPriceInput = document.querySelector(".filter-section input[placeholder='Min $']");
+    const maxPriceInput = document.querySelector(".filter-section input[placeholder='Max $']");
+    const resetButton = document.querySelector(".reset-button");
+    const products = document.querySelectorAll(".product-card");
+
+    function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategories = Array.from(filterCheckboxes)
+            .filter((checkbox) => checkbox.checked)
+            .map((checkbox) => checkbox.getAttribute("data-category"));
+
+        const minPrice = minPriceInput.value ? parseFloat(minPriceInput.value) : 0;
+        const maxPrice = maxPriceInput.value ? parseFloat(maxPriceInput.value) : Infinity;
+
+        products.forEach((product) => {
+            const productName = product.querySelector("h3").textContent.toLowerCase();
+            const productCategory = product.getAttribute("data-category");
+            const productGame = product.getAttribute("data-game");
+            const productSize = product.getAttribute("data-size");
+            const productPrice = parseFloat(product.querySelector(".product-price").textContent.replace("$", ""));
+
+            const matchesSearch = productName.includes(searchTerm);
+            const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(productCategory) || selectedCategories.includes(productGame) || selectedCategories.includes(productSize);
+            const matchesPrice = productPrice >= minPrice && productPrice <= maxPrice;
+
+            if (matchesSearch && matchesCategory && matchesPrice) {
+                product.style.display = "block";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    }
+
+    // Add event listeners
+    searchInput.addEventListener("input", filterProducts);
+    filterCheckboxes.forEach((checkbox) => checkbox.addEventListener("change", filterProducts));
+    minPriceInput.addEventListener("input", filterProducts);
+    maxPriceInput.addEventListener("input", filterProducts);
+
+    // Reset filters
+    resetButton.addEventListener("click", function () {
+        searchInput.value = "";
+        filterCheckboxes.forEach((checkbox) => (checkbox.checked = false));
+        minPriceInput.value = "";
+        maxPriceInput.value = "";
+        filterProducts();
+    });
+
+    filterProducts(); // Initial filtering
+});
+
     </script>
     
 
