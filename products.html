@@ -43,12 +43,16 @@
        /* 🏗️ Content Overlay Layout */
 .content-overlay {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
 }
-
+.filter-products{
+    display: flex;
+    gap: 50px;
+    padding:40px;
+}
 /* 🎛️ Filter Container */
 .filter {
     background: rgba(0, 0, 0, 0.8);
@@ -59,6 +63,7 @@
     color: white;
     border: 3px solid #ff7b00;
     box-shadow: 0px 4px 10px rgba(255, 123, 0, 0.5);
+    height: fit-content;
 }
 
 .filter-section {
@@ -81,13 +86,16 @@
 .filter-section input {
     margin-right: 10px;
 }
-
+.searchers-container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 /* 🔍 Search Bar */
 .searcher-container {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-    height: 30px;
+    width: 80%;
+    height: fit-content;
+    margin: 30px;
 }
 
 .searcher-container input {
@@ -306,9 +314,12 @@
             <div class="content-overlay">
 
                
-                 <div class="searcher-container">
+                 <div class="searchers-container">
 
-
+                    <div class="searcher-container">
+                        <input type="text" placeholder="Search..." class="search-input">
+                        <i class="fa fa-search search-icon"></i>
+                    </div>
 
                 </div>
                 
