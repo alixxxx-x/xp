@@ -118,7 +118,7 @@
     padding-top: 20px;
     border-radius: 10px;
 }
-#p1{
+#product-1{
     display: flex;
     flex-direction: column;
 }
@@ -228,7 +228,7 @@
             </div>
             <div class="hole-page">
                 <div class="product-page">
-                    <div id="p1">
+                    <div id="product-1">
                         <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="product-1" id="product-1" >
                         <div class="xp">
                         <img style="width: 40px;" src="assets/sefesf (1).webp" alt=""> 
@@ -316,39 +316,40 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
    <script>    
-    document.addEventListener("DOMContentLoaded", () => {
-        const addToCartButton = document.querySelector(".cart-btn");
+ document.addEventListener("DOMContentLoaded", () => {
+    const addToCartButton = document.querySelector(".cart-btn");
 
-        addToCartButton.addEventListener("click", () => {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    addToCartButton.addEventListener("click", () => {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-            const selectedSize = document.querySelector(".size-btn.selected");
-            if (!selectedSize) {
-                alert("Please select a size!");
-                return;
-            }
+        const selectedSize = document.querySelector(".size-btn.selected");
+        if (!selectedSize) {
+            alert("Please select a size!");
+            return;
+        }        const productName = document.querySelector(".label-font").innerText;
+        const productPrice = parseFloat(document.querySelector(".price span").innerText.replace("$", ""));
 
-            const product = {
-                Image: "//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067",
-                id: "annoyingdog_lapel",
-                name: "Annoying Dog Lapel Pin",
-                price: 20,
-                size: selectedSize.innerText,
-                quantity: 1
-            };
+        const product = {
+            id: "annoyingdog_lapel",
+            name: productName,
+            price: productPrice,
+            size: selectedSize.innerText, 
+            quantity: 1
+        };
 
-            // Check if the item is already in the cart with the same size
-            const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push(product);
-            }
+        // Check if item already exists with the same size
+        const existingItem = cart.find(item => item.id === product.id && item.size === product.size);
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push(product);
+        }
 
-            localStorage.setItem("cart", JSON.stringify(cart));
-            alert("Added to cart!");
-        });
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert("Added to cart!");
     });
+});
+
 </script>
 
     

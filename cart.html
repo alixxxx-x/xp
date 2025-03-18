@@ -137,6 +137,14 @@
             font-size: 18px;
             cursor: pointer;
         }
+        @media(max-width:719px){
+            .shopping-cart{
+                min-width: 512px;
+            }
+            footer{
+                min-width: 512px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -227,7 +235,7 @@
                 Grand Total: <span class="totals-value">$299.97</span>
             </div>
         </div>
-       <a href=""> <button class="checkout">Proceed to Checkout</button></a>
+       <a href="checkout.html" style="text-decoration: none;"> <button class="checkout">Proceed to Checkout</button></a>
     </div>
 </section>
     <footer>
@@ -276,60 +284,50 @@
     <script>
         function loadCart() {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartContainer = document.querySelector(".cart-items");
-            const totalPriceElement = document.querySelector(".totals-value");
-            cartContainer.innerHTML = "";
+            const cartItemsContainer = document.querySelector(".cart-items");
+            cartItemsContainer.innerHTML = "";
     
             let totalPrice = 0;
     
             if (cart.length === 0) {
-                cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-                totalPriceElement.innerText = "$0.00";
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+                document.querySelector(".totals-value").innerText = "$0.00";
                 return;
             }
     
             cart.forEach((item, index) => {
-                totalPrice += item.price * item.quantity;
+                const productDiv = document.createElement("div");
+                productDiv.classList.add("product");
     
-                cartContainer.innerHTML += `
-                    <div class="product">
-                        <div class="product-details">
-                            <img src= "${item.image}" alt=${item.name}>
-                            <h4>${item.name}</h4>
-                            <p>Size: ${item.size}</p>
-                            <p>Quantity: <button onclick="changeQuantity(${index}, -1)">-</button> ${item.quantity} <button onclick="changeQuantity(${index}, 1)">+</button></p>
-                            <p class="product-line-price">$${(item.price * item.quantity).toFixed(2)}</p>
-                        </div>
-                        <button class="product-removal" onclick="removeFromCart(${index})">Remove</button>
+                const itemTotalPrice = item.price * item.quantity;
+                totalPrice += itemTotalPrice;
+    
+                productDiv.innerHTML = `
+                    
+                    <div class="product-details">
+                        <p class="product-description">${item.name} (Size: ${item.size})</p>
+                        <p>Quantity: <span class="quantity">${item.quantity}</span></p>
+                    </div>
+                    <div class="product-line-price">$${itemTotalPrice.toFixed(2)}</div>
+                    <div class="product-removal">
+                        <button onclick="removeItem(${index})">Remove</button>
                     </div>
                 `;
+    
+                cartItemsContainer.appendChild(productDiv);
             });
     
-            totalPriceElement.innerText = `$${totalPrice.toFixed(2)}`;
+            document.querySelector(".totals-value").innerText = `$${totalPrice.toFixed(2)}`;
         }
     
-        function removeFromCart(index) {
+        function removeItem(index) {
             let cart = JSON.parse(localStorage.getItem("cart")) || [];
             cart.splice(index, 1);
             localStorage.setItem("cart", JSON.stringify(cart));
-            loadCart();
-        }
-    
-        function changeQuantity(index, change) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            if (cart[index]) {
-                cart[index].quantity += change;
-                if (cart[index].quantity <= 0) {
-                    cart.splice(index, 1);
-                }
-                localStorage.setItem("cart", JSON.stringify(cart));
-                loadCart();
-            }
+            loadCart(); // Reload cart after removal
         }
     
         document.addEventListener("DOMContentLoaded", loadCart);
-    </script>
-    
-      
+    </script>  
 </body>
 </html>
