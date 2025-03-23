@@ -14,26 +14,27 @@
 
     <style> 
     
-    .mainsection{
+    .main-section{
         
         width: 100%;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 200px;
 
     }
     .hole-page{
         height:100%;
         width: 100%;
-         background:linear-gradient(135deg, #ed400b, #fe4a2f, #f7ae12);
+         background:linear-gradient(135deg, #171616, #302b2b, #2a2a29);
         display: flex;
         flex-direction: column;
         justify-self: center;
         border-radius: 10px;
     }
     #game-name{
-        background-color: brown;
+        background-color: rgb(255, 255, 255);
         width: fit-content;
         justify-self: center;
         padding-left: 20px;
@@ -67,19 +68,19 @@
     height:45px ;
     padding: 10px;
     margin-bottom: 20px;
-    background: #c20c06;
+    background: #ccdee9;
     color: black;
     border: none;
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     cursor: pointer;
-    box-shadow: 2px 2px 0px #ffcc00;
+    box-shadow: 2px 2px 0px #000000;
 
 }
 
 
 .cart-btn:hover{
-    background: #f43333;
+    background: #ffdd45;
     transform: translateY(3px);
     box-shadow: 0px 2px 0px #d84315;
 
@@ -140,7 +141,7 @@
 
 .size-btn {
     background: #ff7b00;
-    color: black;
+    color: #3f3e3e;
     border: none;
     padding: 8px 12px;
     font-size: 12px;
@@ -150,10 +151,7 @@
     border-radius: 5px;
     transition: 0.2s;
 }
-.size-btn{
-    background: #ffcc00;
-    box-shadow: 2px 2px 0px #ff7b00;
-}
+
 .size-btn.selected {
     border: 2px solid white; 
 }
@@ -232,17 +230,17 @@
                         <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="product-1" id="product-1" >
                         <div class="xp">
                         <img style="width: 40px;" src="assets/sefesf (1).webp" alt=""> 
-                        <span style="font-size: 15px;font-weight: bolder; font-family: 'Press Start 2P', cursive;"> Aquirable+xp</span>
+                        <span style="font-size: 15px;font-weight: bolder; font-family: 'Press Start 2P', cursive;color: #ccdee9;"> Aquirable+xp</span>
                         </div>
                     </div>
                     <div id="content">
-                         <h3 style="font-size: 33px; color:rgb(0, 0, 0); margin: 20px 0px;" class="label-font">Product name</h3>
+                         <h3 style="font-size: 33px; color:rgb(255, 255, 255); margin: 20px 0px;" class="label-font">Product name</h3>
 
                         <div class="price">
-                            <label style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX;width: fit-content;" class="label-font">Price:</label> <span style="font-size: 22px;color: rgb(21, 21, 21);background: #dfbe76;padding: 5PX;border-radius: 5PX;"class="label-font">$36</span>
+                            <label style="color:#3f3e3e;font-size: 22px;background: #e9be6f;padding: 5PX;border-radius: 5PX;width: fit-content;" class="label-font">Price:</label> <span style="font-size: 22px;font-weight: 900;color: rgb(67, 66, 66);background: #c9b136;padding: 5PX;border-radius: 5PX;"class="label-font">$36</span>
                         </div>
-                        <h3 style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX;width:fit-content;" class="label-font">Sizes:</h3>
-                        <ul id="sizes" style="background: #dfbe76;padding:20px;margin:5px 0px;border-radius: 5px;">
+                        <h3 style="color:#3f3e3e;font-size: 22px;background: #e9be6f;padding: 5PX;border-radius: 5PX;width:fit-content;" class="label-font">Sizes:</h3>
+                        <ul id="sizes" style="color:#ccdee9;background: #001320;padding:20px;margin:5px 0px;border-radius: 5px;">
                             <li><button class="size-btn"onclick="selectSize(this)">M</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">S</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">L</button></li>
@@ -250,8 +248,8 @@
                             <li><button class="size-btn"onclick="selectSize(this)">XXL</button></li>
                             <li><button class="size-btn"onclick="selectSize(this)">XXXL</button></li>
                         </ul>
-                        <h3 style="font-size: 22px;background: #737373;padding: 5PX;border-radius: 5PX" class="label-font">Description:</h3>
-                        <p style="font-size: 15px;background:  #dfbe76;padding: 30PX;border-radius: 5PX;margin:5px 0px"class="label-font"><i class="fa fa-star" style="color: rgb(255, 252, 71);transform: scale(1.5) ; position: relative;top: -4px;"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, in.</p>
+                        <h3 style="color:#3f3e3e;font-size: 22px;background: #e9be6f;padding: 5PX;border-radius: 5PX;width:fit-content" class="label-font">Description:</h3>
+                        <p style="color:#ccdee9;font-size: 15px;background: linear-gradient(135deg, #001121, #001626, #1a1e29);;padding: 30PX;border-radius: 5PX;margin:5px 0px"class="label-font"><i class="fa fa-star" style="color: rgb(255, 252, 71);transform: scale(1.5) ; position: relative;top: -4px;"></i> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto, in.</p>
                         
                     </div> 
                 </div>
