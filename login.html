@@ -311,13 +311,13 @@
 </footer>
 <script>
     function showSidebar(){
-        const sidebar= document.querySelector('.sidebar')
-        sidebar.style.display ='flex'
-    }
-    function hideSidebar(){
-        const sidebar = document.querySelector('.sidebar')
-        sidebar.style.display='none'
-    }
+            const sidebar= document.querySelector('.sidebar')
+            sidebar.style.inset ='0 0 0 auto'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.inset='0 -250px 0 auto'
+        }
 
 </script>
 

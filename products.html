@@ -681,11 +681,11 @@
     <script>
         function showSidebar(){
             const sidebar= document.querySelector('.sidebar')
-            sidebar.style.display ='flex'
+            sidebar.style.inset ='0 0 0 auto'
         }
         function hideSidebar(){
             const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display='none'
+            sidebar.style.inset='0 -250px 0 auto'
         }
 
         document.addEventListener("DOMContentLoaded", function () {

@@ -44,6 +44,8 @@ nav{
 
  nav item{
     display: none;
+    cursor: pointer;
+    padding: 5px 15px;
  }
 
   @media (max-width: 1013px) {
@@ -92,8 +94,8 @@ nav{
         
     }
   }
+     
   
-
   nav .sidebar{
     position:fixed;
     top:0;
@@ -104,20 +106,30 @@ nav{
     background: #f243035f;
     backdrop-filter: blur(10px);
     box-shadow: -20px 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
+    inset: 0px -250px auto;
+    display:flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    transition: 0.8s;
 
 }
+
 .sidebar  a{
     width: 100%;
+    height: 51px;
     font-size: 1.1em ;
     color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: 500;
     padding: 15px;
+    cursor: pointer;
    
+}
+.sidebar a:nth-child(1){
+    position: relative;
+    right:-196px;
+    width: fit-content;
 }
 .sidebar a:hover{
     background: orangered;
