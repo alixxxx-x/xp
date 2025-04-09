@@ -15,19 +15,16 @@
            
         }
         .main-section{
-            
-          
-            
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 160px 90px;
+            margin: 160px 0px;
         }
         
         .shopping-cart {
             padding: 30px;
-            width: 100%;
-            max-width: 1000px;
+            width: 85%;
+            max-width: 900px;
             height: 100%;
             background:linear-gradient(135deg, #ed400b, #fe4a2f, #f7ae12);
             border-radius: 10px;
@@ -57,44 +54,32 @@
             border-radius: 5px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        .product {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 10px;
-            flex-wrap: wrap;
-            background-color: #000;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            transition: transform 0.3s;
+        .item {
+         display:grid;
+         grid-template-columns: 70px 150px 50px 1fr;
+         gap: 10px;
+         text-align:center;
+         align-items:center;
+         color:aliceblue;
+         border-radius: 5px;
         }
-        .product-image img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 5px;
+        .item img{
+         width: 100%;
         }
-        .product-details {
-            flex: 1;
-            font-family: 'HelveticaNeue-Medium';
-            margin-left: 20px;
-            
+        .item .quantity span{
+         display:inline-block;
+         width: 25px;  
+         background-color: aliceblue;
+         color:#333;
+         border-radius: 25px;
+         cursor: pointer;
         }
-        .product-description {
-            margin: 5px 0;
-            line-height: 1.4em;
-            color: #acaaaa;
-            font-size: 16px;
-            font-weight: bold;
-            font-size: 20px;
+        .item .quantity span:nth-child(2){
+            background-color:transparent;
+            color:aliceblue
         }
-        .product-line-price {
-            flex: 0 0 80px;
-            text-align: right;
-            color: #acaaaa;
-            font-size: 16px;
-            font-weight: bold;
-            padding-right: 10px;
+        .cart-items .item:nth-child(even){
+            background-color:#000;
         }
         .product-removal button {
             background: #ff7b00;
@@ -174,7 +159,7 @@
             
  
              </div>
-             <item onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
+             <item onclick=Sidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
              <div class="sidebar">
                 <a onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
                 <a href="home.html">Home</a>
@@ -188,48 +173,31 @@
             </div>
     </nav>  
     <section class="main-section">
+        
     <div class="shopping-cart">
         <div class="shopping-cart1">
             <i class="fa-solid fa-cart-shopping"></i>
             <h1 >Shopping Cart</h1> 
         </div>
+
         <div class="cart-items">
-            <div class="product">
-                <div class="product-image">
-                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
+            <div class="item">
+                <div class="image">
+                    <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="product-1" > 
                 </div>
-                <div class="product-details">
-                    <p class="product-description">product name</p>
+                <div class="name">
+                    NAME
                 </div>
-                <div class="product-line-price">$99.99</div>
-                <div class="product-removal">
-                    <button>Remove</button>
+                <div class="total-price">
+                    $200
                 </div>
-            </div>
-            <div class="product">
-                <div class="product-image">
-                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
-                </div>
-                <div class="product-details">
-                    <p class="product-description">product name</p>
-                </div>
-                <div class="product-line-price">$99.99</div>
-                <div class="product-removal">
-                    <button>Remove</button>
+                <div class="quantity">
+                    <span class="minus">-</span>
+                    <span>1</span>
+                    <span class="plus">+</span>
                 </div>
             </div>
-            <div class="product">
-                <div class="product-image">
-                    <img src="//www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067" alt="Product Name">
-                </div>
-                <div class="product-details">
-                    <p class="product-description">product name</p>
-                </div>
-                <div class="product-line-price">$99.99</div>
-                <div class="product-removal">
-                    <button>Remove</button>
-                </div>
-            </div>
+           
         </div>
         <div class="totals">
             <div class="totals-item">
@@ -271,7 +239,7 @@
         </div>
     </footer>
     <script>
-       function showSidebar(){
+        function showSidebar(){
             const sidebar= document.querySelector('.sidebar')
             sidebar.style.inset ='0 0 0 auto'
         }
@@ -283,52 +251,18 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
-        function loadCart() {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            const cartItemsContainer = document.querySelector(".cart-items");
-            cartItemsContainer.innerHTML = "";
-    
-            let totalPrice = 0;
-    
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
-                document.querySelector(".totals-value").innerText = "$0.00";
-                return;
-            }
-    
-            cart.forEach((item, index) => {
-                const productDiv = document.createElement("div");
-                productDiv.classList.add("product");
-    
-                const itemTotalPrice = item.price * item.quantity;
-                totalPrice += itemTotalPrice;
-    
-                productDiv.innerHTML = `
-                    
-                    <div class="product-details">
-                        <p class="product-description">${item.name} (Size: ${item.size})</p>
-                        <p>Quantity: <span class="quantity">${item.quantity}</span></p>
-                    </div>
-                    <div class="product-line-price">$${itemTotalPrice.toFixed(2)}</div>
-                    <div class="product-removal">
-                        <button onclick="removeItem(${index})">Remove</button>
-                    </div>
-                `;
-    
-                cartItemsContainer.appendChild(productDiv);
-            });
-    
-            document.querySelector(".totals-value").innerText = `$${totalPrice.toFixed(2)}`;
-        }
-    
-        function removeItem(index) {
-            let cart = JSON.parse(localStorage.getItem("cart")) || [];
-            cart.splice(index, 1);
-            localStorage.setItem("cart", JSON.stringify(cart));
-            loadCart(); // Reload cart after removal
-        }
-    
-        document.addEventListener("DOMContentLoaded", loadCart);
+      let listProductHTML = document.querySelector('.listProduct');
+      let listProducts = [];
+
+      const initApp = () => {
+        fetch('items.json')
+        .then(response => response.json())
+        .then(data => {
+            listProducts = data;
+            addDataToHTML();
+        })
+      }
+      initApp();
     </script>  
 </body>
 </html>
