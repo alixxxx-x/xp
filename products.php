@@ -404,28 +404,30 @@
 
         <div class="navigation">
             
-             <div class="nav-links">
-                 <a href="home.html">Home</a>
-                 <a href="products.html">Products</a>
-                 <a href="about.html">About</a>
-                 <a href="contact.html">Contact</a>
-                 <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></div>
-                 <a href ="login.html" ><button class="btnLogin-popup">Login</button></a>
+        <div class="navigation">
             
- 
-             </div>
-             <item onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
-             <div class="sidebar">
-                <a onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-                <a href="home.html">Home</a>
-                <a href="products.html">Products</a>
+            <div class="nav-links">
+                <a href="home.php">Home</a>
+                <a href="products.php">Products</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href ="login.html" >Login</a>
-                <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></div>
-                
+                <a href="cart.php"><ion-icon name="cart-outline"></ion-icon></a></div>
+                <a href ="login.php" ><button class="btnLogin-popup">Login</button></a>
+           
 
             </div>
+            <item onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
+            <div class="sidebar">
+               <a onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+               <a href="home.php">Home</a>
+               <a href="products.php">Products</a>
+               <a href="about.html">About</a>
+               <a href="contact.html">Contact</a>
+               <a href ="login.php" >Login</a>
+               <a href="cart.php"><ion-icon name="cart-outline"></ion-icon></a></div>
+               
+
+           </div>
     </nav>   
     
     
@@ -508,133 +510,50 @@
 
                     <div class="products-grid">
 
-                        <div class="product-card">
+                    <?php
+// Connect to the database
+$conn = new mysqli("localhost", "root", "", "xpwear");
 
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_UT_megalovania_shirt_itemview_360x360.png?v=1733339310">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Megalovania</h3>
-                                    <h4>Undertale</h4>
-                                </div>
-            
-                                <h5 class="product-price">$36</h5>
-                            </div>
-                            
-                            <button class="buy-1">BUY NOW</button>
-                            
-                        </div>
-                        
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_UT_annoyingdog_lapel_itemview_new_360x360.png?v=1691702067">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Annoying Dog Label Pin</h3>
-                                    <h4>Undertale</h4>
-                                </div>
-            
-                                <h5 class="product-price">$12</h5>
-                            </div>
-                            
-                            <a href="product.html"><button class="buy-1">BUY NOW</button></a>
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-                        </div>
-            
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_DS_trial_shirt_itemview_new_360x360.png?v=1691626678">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Trial By Fire</h3>
-                                    <h4>Dark Souls</h4>
-                                </div>
-            
-                                <h5 class="product-price">$36</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-            
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_undertale_underground_garden_button_up_shirt_itemview_360x360.png?v=1730836465">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Underground Garden Button_Up</h3>
-                                    <h4>Undertale</h4>
-                                </div>
-            
-                                <h5 class="product-price">$100</h5>
-                            </div>
-                            
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-                        
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_ape_escape_gotcha_shirt_itemview_360x360.png?v=1728078303">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Gotcha!</h3>
-                                    <h4>Ape Escape</h4>
-                                </div>
-            
-                                <h5 class="product-price">$35</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_hk_wandering-knight_shirt_itemview_new_360x360.png?v=1691626572">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Wandering Night</h3>
-                                    <h4>Hollow Knight</h4>
-                                </div>
-            
-                                <h5 class="product-price">$34</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_bugsnax_strabby_beanie_itemview_new_360x360.png?v=1691625196">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Strabby Beanie</h3>
-                                    <h4>Bugsnax</h4>
-                                </div>
-            
-                                <h5 class="product-price">$24</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_conker_cheers-jeers-beers_shirt_itemview_new_360x360.png?v=1691626355">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Cheers,Jeers AND Bears!</h3>
-                                    <h4>Conker's Bad_FuR_Day</h4>
-                                </div>
-            
-                                <h5 class="product-price">$16</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
-                        <div class="product-card">
-                            <img src="https://www.fangamer.com/cdn/shop/files/product_UFO50_slard_pin_itemview_360x360.png?v=1729032323">
-                            <div class="product-info">
-            
-                                <div class="product-details">
-                                    <h3>Slard Pin</h3>
-                                    <h4>Ufo 50</h4>
-                                </div>
-            
-                                <h5 class="product-price">$14</h5>
-                            </div>
-                            <button class="buy-1">BUY NOW</button>
-                        </div>
+
+// Fetch all products from the database
+$sql = "SELECT * FROM items";  // Adjust the query as needed
+$result = $conn->query($sql);
+
+// Check if the query was successful
+if ($result === false) {
+    // Query failed, show an error
+    die("Error in SQL query: " . $conn->error);
+}
+
+// Check if there are products
+if ($result->num_rows > 0) {
+    // Loop through the results and generate a card for each product
+    while($row = $result->fetch_assoc()) {
+        echo '<div class="product-card">
+                <img src="' . $row["image"] . '" alt="' . $row["name"] . '">
+                <div class="product-info">
+                    <div class="product-details">
+                        <h3>' . $row["name"] . '</h3>
+                        <h4>' . $row["game"] . '</h4>
+                    </div>
+                    <h5 class="product-price">$' . $row["price"] . '</h5>
+                </div>
+                <a href="product.php?id=' . $row["id"] . '"><button class="buy-1">BUY NOW</button></a>
+            </div>';
+    }
+} else {
+    echo "No products available.";
+}
+
+// Close the connection
+$conn->close();
+?>
+
 
                     </div>
 

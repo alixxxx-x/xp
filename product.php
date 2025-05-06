@@ -1,6 +1,40 @@
 <?php
-include 'get_item.php';
+// Connect to the database
+$conn = new mysqli("localhost", "root", "", "xpwear");
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Get product ID from URL, e.g. product.php?id=1
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 0; // Default to 0 if no ID is provided
+
+// Query to fetch product details based on the given ID
+if ($id > 0) {
+    $sql = "SELECT * FROM items WHERE id = $id";
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        // Fetch the product details for that specific id
+        $product = $result->fetch_assoc();
+        
+        // Store data in variables
+        $name = $product['name'];
+        $price = $product['price'];
+        $image = $product['image'];
+        $description = $product['description'];
+        
+    } else {
+        echo "Item not found.";
+        exit;
+    }
+} else {
+    echo "Invalid product ID.";
+    exit;
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">

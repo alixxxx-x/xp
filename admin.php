@@ -1,14 +1,5 @@
 <?php
-// admin.php
-// Connect to the database
-$conn = new mysqli("localhost", "root", "", "xpwear");
-if ($conn->connect_error) die("Connection failed: " . $conn->connect_error);
-// Fetch all products
-$result = $conn->query("SELECT * FROM items");
-$products = [];
-while ($row = $result->fetch_assoc()) {
-    $products[] = $row;
-}
+include 'get_item.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,28 +41,30 @@ while ($row = $result->fetch_assoc()) {
 
         <div class="navigation">
             
-             <div class="nav-links">
-                 <a href="home.html">Home</a>
-                 <a href="products.html">Products</a>
-                 <a href="about.html">About</a>
-                 <a href="contact.html">Contact</a>
-                 <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></div>
-                 <a href ="login.html" ><button class="btnLogin-popup">Login</button></a>
+        <div class="navigation">
             
- 
-             </div>
-             <item onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
-             <div class="sidebar">
-                <a onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
-                <a href="home.html">Home</a>
-                <a href="products.html">Products</a>
+            <div class="nav-links">
+                <a href="home.php">Home</a>
+                <a href="products.php">Products</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <a href ="login.html" >Login</a>
-                <a href="cart.html"><ion-icon name="cart-outline"></ion-icon></a></div>
-                
+                <a href="cart.php"><ion-icon name="cart-outline"></ion-icon></a></div>
+                <a href ="login.php" ><button class="btnLogin-popup">Login</button></a>
+           
 
             </div>
+            <item onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></item>
+            <div class="sidebar">
+               <a onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+               <a href="home.php">Home</a>
+               <a href="products.php">Products</a>
+               <a href="about.html">About</a>
+               <a href="contact.html">Contact</a>
+               <a href ="login.php" >Login</a>
+               <a href="cart.php"><ion-icon name="cart-outline"></ion-icon></a></div>
+               
+
+           </div>
     </nav>  
     <section class="admin-section">
         <h2>Product Management</h2>
