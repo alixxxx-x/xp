@@ -89,22 +89,24 @@ while ($row = $result->fetch_assoc()) {
             </thead>
             <tbody>
             <?php foreach ($products as $p): ?>
-        <tr id="<?php echo 'row-' . $p['id']; ?>">
-        <td><?php echo htmlspecialchars($p['id']); ?></td>
-        <td><?php echo htmlspecialchars($p['name']); ?></td>
-        <td><?php echo htmlspecialchars($p['game']); ?></td>
-        <td>$<?php echo number_format($p['price'], 2); ?></td>
-        <td>
-            <button class="btn-action" onclick="editSize(<?php echo $p['id']; ?>, '<?php echo htmlspecialchars($p['size']); ?>')">
-                <?php echo htmlspecialchars($p['size']); ?>
-            </button>
-        </td>
-        <td><?php echo htmlspecialchars($p['description']); ?></td>
-        <td>
-            <button class="btn-action" onclick="removeProduct(<?php echo $p['id']; ?>)">Remove</button>
-        </td>
+                <tr id="<?php echo 'row-' . $p['id']; ?>">
+                <td><?php echo htmlspecialchars($p['id']); ?></td>
+                <td><?php echo htmlspecialchars($p['name']); ?></td>
+                <td><?php echo htmlspecialchars($p['game']); ?></td>
+                <td>$<?php echo number_format($p['price'], 2); ?></td>
+                <td>
+                    <button class="btn-action" onclick="editSize(<?php echo $p['id']; ?>, '<?php echo htmlspecialchars($p['size']); ?>')">
+                     <?php echo htmlspecialchars($p['size']); ?>
+                    </button>
+                </td>
+                <td> 
+                     <?php echo htmlspecialchars($p['description']); ?>
+                </td>
+                <td>
+                 <button class="btn-action" onclick="removeProduct(<?php echo $p['id']; ?>)">Remove</button>
+                </td>
     </tr>
-<?php endforeach; ?>
+        <?php endforeach; ?>
             </tbody>
         </table>
         <div class="add-form">
